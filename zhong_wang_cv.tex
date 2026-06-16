@@ -1,19 +1,15 @@
 %==============================================================================
-%  Curriculum Vitae — Zhong Wang, Ph.D.
+%  Curriculum Vitae -- Zhong Wang, Ph.D.
 %  Modern single-column scientific CV (compiles with pdflatex, TeX Live 2025)
 %  Updated: June 2026
 %==============================================================================
 \documentclass[11pt,letterpaper]{article}
-
-% ---------- Packages ----------------------------------------------------------
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[scaled=0.92]{helvet}   % crisp sans for headings
+\usepackage[scaled=0.92]{helvet}
 \usepackage{microtype}
-\usepackage[
-  top=1.7cm, bottom=1.9cm, left=2.0cm, right=2.0cm, footskip=1.0cm
-]{geometry}
+\usepackage[top=1.7cm, bottom=1.9cm, left=2.0cm, right=2.0cm, footskip=1.0cm]{geometry}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -23,97 +19,58 @@
 \usepackage{lastpage}
 \usepackage{array}
 \usepackage{tabularx}
-
-% ---------- Colors ------------------------------------------------------------
-\definecolor{accent}{HTML}{1F4E79}   % deep professional blue
-\definecolor{accent2}{HTML}{2E75B6}  % lighter blue
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{accent2}{HTML}{2E75B6}
 \definecolor{rule}{HTML}{B7C9DE}
 \definecolor{darktext}{HTML}{222222}
 \definecolor{graytext}{HTML}{555555}
-
-% ---------- Hyperlinks --------------------------------------------------------
-\hypersetup{
-  colorlinks=true,
-  urlcolor=accent2,
-  linkcolor=accent2,
-  pdftitle={Zhong Wang -- Curriculum Vitae},
-  pdfauthor={Zhong Wang}
-}
-
-% ---------- Global text -------------------------------------------------------
+\hypersetup{colorlinks=true,urlcolor=accent2,linkcolor=accent2,
+  pdftitle={Zhong Wang -- Curriculum Vitae},pdfauthor={Zhong Wang}}
 \color{darktext}
 \setlength{\parindent}{0pt}
 \linespread{1.03}
-
-% ---------- Section styling ---------------------------------------------------
-\titleformat{\section}
-  {\sffamily\large\bfseries\color{accent}}
-  {}{0em}
-  {\MakeUppercase}
+\titleformat{\section}{\sffamily\large\bfseries\color{accent}}{}{0em}{\MakeUppercase}
   [\vspace{2pt}{\color{rule}\titlerule[1.1pt]}]
 \titlespacing*{\section}{0pt}{14pt}{7pt}
-
-\titleformat{\subsection}
-  {\sffamily\normalsize\bfseries\color{accent2}}
-  {}{0em}{}
+\titleformat{\subsection}{\sffamily\normalsize\bfseries\color{accent2}}{}{0em}{}
 \titlespacing*{\subsection}{0pt}{8pt}{3pt}
-
-% ---------- List styling ------------------------------------------------------
 \setlist[itemize]{leftmargin=1.3em, itemsep=2pt, topsep=2pt, parsep=0pt}
 \newenvironment{cvlist}
   {\begin{itemize}[leftmargin=1.4em, label=\textcolor{accent2}{\small$\bullet$},
     itemsep=2.5pt, topsep=2pt, parsep=0pt]}
   {\end{itemize}}
-
-% Numbered publication list (descending impact / chronological)
 \newcounter{pubcounter}
 \newcommand{\pub}[1]{%
   \refstepcounter{pubcounter}%
   \par\sloppy\hangindent=1.6em\hangafter=1%
   \makebox[1.4em][l]{\small\color{graytext}\thepubcounter.}#1\par\vspace{2.5pt}}
-
-% Dated entry: {year}{content}
 \newcommand{\dated}[2]{%
   \par\noindent
   \begin{tabularx}{\linewidth}{@{}p{2.3cm}@{\hspace{0.4em}}X@{}}
     {\color{accent2}\bfseries\small #1} & #2
   \end{tabularx}\vspace{2pt}}
-
-% Talk entry (compact)
 \newcommand{\talk}[2]{%
   \par\hangindent=2.7cm\hangafter=1\noindent
   \makebox[2.5cm][l]{\color{accent2}\bfseries\small #1}#2\par\vspace{1.5pt}}
-
-% ---------- Header / Footer ---------------------------------------------------
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[L]{\footnotesize\color{graytext}Zhong Wang \textbar{} Curriculum Vitae}
 \fancyfoot[R]{\footnotesize\color{graytext}\thepage\,/\,\pageref{LastPage}}
-
-%==============================================================================
 \begin{document}
-
-% ============================ NAME BANNER ====================================
-{\sffamily
- \color{accent}\Huge\bfseries Zhong Wang\par}
+{\sffamily\color{accent}\Huge\bfseries Zhong Wang\par}
 \vspace{2pt}
-{\sffamily\large\color{graytext}Ph.D. \textbar{} Computational Biologist \& Genome AI Research Lead\par}
+{\sffamily\large\color{graytext}Ph.D. \textbar{} Career Computational Biologist \& Genome Analysis Group Lead\par}
 \vspace{6pt}
 {\color{rule}\rule{\linewidth}{1.1pt}}
 \vspace{5pt}
-
-% Contact line
 {\footnotesize\color{graytext}
 \faMapMarker* \, Lawrence Berkeley National Laboratory, 1 Cyclotron Rd, Berkeley, CA 94720 \quad\textbar\quad
 \faPhone* \, (925) 330-7734 \\[2pt]
 \faEnvelope \, \href{mailto:zhongwang@lbl.gov}{zhongwang@lbl.gov} \quad\textbar\quad
-\faGoogle \, \href{http://scholar.google.com/citations?user=Nl862k8AAAAJ&hl=en}{Google Scholar} \quad\textbar\quad
-\faGraduationCap \, Ph.D., Duke University (2004)
+\faGlobe \, \href{http://scholar.google.com/citations?user=Nl862k8AAAAJ&hl=en}{Google Scholar Profile}
 }
 \vspace{2pt}
-
-% ============================ PROFILE ========================================
 \section{Profile}
 Computational biologist and research group lead specializing in \textbf{genome foundation models},
 large-scale metagenomics, and scalable machine learning for the life sciences. Creator of
@@ -121,8 +78,6 @@ large-scale metagenomics, and scalable machine learning for the life sciences. C
 open-source genomic AI tooling adopted across the research community. Twenty-plus years bridging
 high-performance computing, deep learning, and microbial genomics, with a sustained record of
 mentorship, multi-institutional collaboration, and competitive resource acquisition.
-
-% ============================ EXPERIENCE =====================================
 \section{Professional Experience}
 \dated{2009--present}{\textbf{Career Computational Biologist \& Genome Analysis Group Lead}, DOE Joint Genome Institute; Environmental Genomics \& Systems Biology Division, Lawrence Berkeley National Laboratory, Berkeley, CA.}
 \dated{2022--present}{\textbf{Adjunct Professor}, Dept.\ of Molecular \& Cellular Biology, School of Natural Sciences; Founder \& Director, JGI/UC~Merced Distinguished Summer Internship Program, University of California, Merced, CA.}
@@ -132,38 +87,23 @@ mentorship, multi-institutional collaboration, and competitive resource acquisit
 \dated{2008--2009}{\textbf{Associate Research Scientist} (Dr.\ Michael Snyder), Dept.\ of Molecular, Cellular \& Developmental Biology, Yale University; \textbf{Director of Bioinformatics}, Yale Stem Cell Center, Yale University Medical School, New Haven, CT.}
 \dated{2004--2007}{\textbf{Postdoctoral Fellow} (Dr.\ Huntington F.\ Willard), Institute for Genome Science \& Policy, Duke University, Durham, NC.}
 \dated{1997--2004}{\textbf{Research Assistant} (Dr.\ Haifan Lin), Dept.\ of Cell Biology, Duke University, Durham, NC.}
-
-% ============================ EDUCATION ======================================
 \section{Education}
 \dated{2004}{\textbf{Ph.D., Cell Biology} --- Duke University, Durham, NC.}
 \dated{2002}{\textbf{Certificate, Bioinformatics \& Genome Technology} --- Duke University, Durham, NC.}
 \dated{1997}{\textbf{M.S., Developmental Biology} --- Shanghai Institute of Cell Biology, Chinese Academy of Sciences, Shanghai, China.}
 \dated{1994}{\textbf{B.S., Microbiology} --- Shandong University, Ji'nan, China.}
-
 \subsection{Executive \& Professional Development}
 \dated{2023}{Certified Innovator Program on the Google Cloud Platform, Google Inc.}
 \dated{2021}{Transformative Leadership Development Program, Berkeley Lab Stewardship Summit.}
 \dated{2012}{Leadership Development Program, Center for Executive Education, UC~Berkeley \& Berkeley Lab.}
-
-% ============================ HONORS =========================================
 \section{Honors \& Fellowships}
 \dated{2021}{Director's Award, Lawrence Berkeley National Laboratory.}
 \dated{2008}{``Crack the Code with the Bear'' Pediatric Cancer Research Award.}
 \dated{1997--2004}{James B.\ Duke Fellowship.}
 \dated{1990--1994}{Outstanding Undergraduate Student Fellowship; First place, college entrance exam, Shandong University (1990).}
 
-% ============================ RESEARCH HIGHLIGHTS ============================
-\section{Selected Research Highlights}
-\begin{cvlist}
-  \item \textbf{GenomeOcean.} Designed a microbial genome foundation model using an 8-expert Mixture-of-Experts (MoE) architecture; sparse-upcycling a dense model delivered a \textbf{1.87$\times$ inference throughput gain} and higher biological plausibility while using \textbf{2.5$\times$ fewer active parameters}. \emph{(Major revision in progress, Nature Methods.)}
-  \item \textbf{Routing-aware probing.} Showed that MoE routing vectors capture functional biological specialization (e.g.\ tRNA / rRNA classification) without explicit supervision --- a new tool for unsupervised functional annotation.
-  \item \textbf{Genome-Factory.} Built and maintains an open-source library unifying genomic foundation-model workflows (data prep, model loading, benchmarking); \textbf{accepted to ICML 2026}, 130+ GitHub stars.
-  \item \textbf{genomeocean-sentinel (GOS) v1.0.} AI-detection framework for synthetic DNA signatures; LBNL software disclosure \#2026-126 (under review for open-source release).
-\end{cvlist}
-
-% ============================ PUBLICATIONS ===================================
 \section{Publications}
-{\footnotesize\color{graytext}Full list: \href{http://scholar.google.com/citations?user=Nl862k8AAAAJ&hl=en}{Google Scholar}. \quad (\,$^{*}$co-first author\,)}
+{\footnotesize ($^{*}$co-first author)}
 \vspace{4pt}
 
 \subsection{Books \& Book Chapters}
@@ -172,119 +112,244 @@ mentorship, multi-institutional collaboration, and competitive resource acquisit
 \pub{Wang Z (Ed.). \textbf{Introduction to Computational Metagenomics.} 2022. ISBN 978-981-124-246-5. DOI:\,10.1142/12425.}
 \pub{Johnson NV, Wang Z. \textit{Transcriptomics: Next Generation Transcriptome.} In \textbf{Encyclopedia of Drug Metabolism and Interactions} (Ed.\ Lyubimov AV), 2017. DOI:\,10.1002/9780470921920.edm149.}
 
-\subsection{Selected Journal Articles \& Proceedings}
-\setcounter{pubcounter}{0}
-\pub{Zhou Z, Wu W, Ho H, Wang J, Shi L, Davuluri RV, \textbf{Wang Z}, Liu H. DNABERT-S: Learning species-aware DNA embedding with genome foundation models. \textbf{Bioinformatics}, 2025, 41(7). DOI:\,10.1093/bioinformatics/btaf188.}
-\pub{Wu W, Song X, Wen Y, Lin Q, Zhou Z, Huo J, \textbf{Wang Z}, Liu H. Genome-Factory: A Library for Tuning, Deploying, and Interpreting Genomic Foundation Models. \textbf{Proc.\ 43rd Int.\ Conf.\ on Machine Learning (ICML)}, 2026. \emph{(Accepted.)}}
-\pub{Ho H, Chovatia M, Egan R, He G, Yoshinaga Y, Liachko I, O'Malley R, \textbf{Wang Z}. Integrating chromatin conformation information in a self-supervised learning model improves metagenome binning. \textbf{PeerJ}, 2023, 11:e16129.}
-\pub{Sun J, Egan RE, Ho H, Li Y, \textbf{Wang Z}. Persistent Memory as an Effective Alternative to RAM in Metagenome Assembly. \textbf{BMC Bioinformatics}, 2022, 23(1).}
-\pub{Meyer F, Fritz A, Deng ZL, Koslicki D, et al. Critical Assessment of Metagenome Interpretation --- second round of challenges. \textbf{Nature Methods}, 2022, 19(4):429--440.}
-\pub{Li K, Lu Y, Deng L, Wang L, Shi L, \textbf{Wang Z}. Deconvolute individual genomes from metagenome sequences through short-read clustering. \textbf{PeerJ}, 2020, 8:e8966.}
-\pub{Shi L, \textbf{Wang Z}. Computational Strategies for Scalable Genomics Analysis. \textbf{Genes}, 2019, 10(12):1017.}
-\pub{Lapierre N, Egan R, Wang W, \textbf{Wang Z}. MiniScrub: de novo long-read scrubbing using approximate alignment and deep learning. \textbf{BMC Bioinformatics}, 2019, 20(1):552.}
-\pub{Shi L, Meng X, Tseng E, Mascagni M, \textbf{Wang Z}. SpaRC: Scalable Sequence Clustering using Apache Spark. \textbf{Bioinformatics}, 2018. DOI:\,10.1093/bioinformatics/bty733.}
-\pub{Sczyrba A, Hofmann P, Belmann P, et al. Critical Assessment of Metagenome Interpretation: a benchmark of metagenomics software. \textbf{Nature Methods}, 2017, 14(11):1063--1071.}
-\pub{Kang DD, Froula J, Egan R, \textbf{Wang Z}. MetaBAT: efficiently reconstructing single genomes from complex microbial communities. \textbf{PeerJ}, 2015, 3:e1165.}
-\pub{Gordon SP, Tseng E, Salamov A, et al, \textbf{Wang Z}. Widespread Polycistronic Transcripts in Fungi Revealed by Single-Molecule mRNA Sequencing. \textbf{PLoS ONE}, 2015, 10(7):e0132628.}
-\pub{Shi W, Moon C, Leahy S, Kang D, et al, \textbf{Wang Z}, Attwood G, Rubin E. Methane yield phenotypes linked to differential gene expression in the sheep rumen microbiome. \textbf{Genome Research}, 2014.}
-\pub{Martin JA, Johnson NV, Gross SM, et al, \textbf{Wang Z}. A near-complete snapshot of the \textit{Zea mays} seedling transcriptome from ultra-deep sequencing. \textbf{Scientific Reports}, 2014. DOI:\,10.1038/srep04519.}
-\pub{Byrne RT, Klingele AJ, Cabot EL, et al, \textbf{Wang Z}, et al. Evolution of Extreme Resistance to Ionizing Radiation via Genetic Adaptation of DNA Repair. \textbf{eLife}, 2014.}
-\pub{Nordberg H, Bhatia K, Wang K, \textbf{Wang Z}. BioPig: a Hadoop-based analytic toolkit for large-scale sequence data. \textbf{Bioinformatics}, 2013. DOI:\,10.1093/bioinformatics/btt528.}
-\pub{Clark S, Egan R, Frazier PI, \textbf{Wang Z}. ALE: a Generic Assembly Likelihood Evaluation Framework. \textbf{Bioinformatics}, 2013. DOI:\,10.1093/bioinformatics/bts723.}
-\pub{Koren S, Schatz MC, Walenz BP, et al, \textbf{Wang Z}, et al, Phillippy AM. Hybrid error correction and de novo assembly of single-molecule sequencing reads. \textbf{Nature Biotechnology}, 2012.}
-\pub{Martin J, \textbf{Wang Z}. Next-generation transcriptome assembly. \textbf{Nature Reviews Genetics}, 2011, 12(10):671--682.}
-\pub{Hess M, Sczyrba A, Egan R, et al, \textbf{Wang Z}, Rubin EM. Metagenomic discovery of biomass-degrading genes and genomes from cow rumen. \textbf{Science}, 2011, 331(6016):463--467.}
-\pub{Bruno VM, \textbf{Wang Z}, Marjani SL, et al, Snyder M. Comprehensive annotation of the \textit{Candida albicans} transcriptome using RNA-seq. \textbf{Genome Research}, 2010, 20(10):1451--1458.}
-\pub{He S, Wurtzel O, Singh K, et al, \textbf{Wang Z}, et al, Hugenholtz P. Validation of two rRNA removal methods for microbial metatranscriptomics. \textbf{Nature Methods}, 2010, 7(10):807--812.}
-\pub{Raha D, \textbf{Wang Z}, Moqtaderi Z, et al, Snyder M. Close association of RNA polymerase II and many transcription factors with Pol III genes. \textbf{PNAS}, 2010, 107(8):3639--3644.}
-\pub{\textbf{Wang Z}, Gerstein M, Snyder M. RNA-Seq: a revolutionary tool for transcriptomics. \textbf{Nature Reviews Genetics}, 2009, 10(1):57--63.}
-\pub{Nagalakshmi U, \textbf{Wang Z}$^{*}$, Waern K, et al, Snyder M. The transcriptional landscape of the yeast genome defined by RNA sequencing. \textbf{Science}, 2008, 320(5881):1344--1349.}
-\pub{Grivna ST, Beyret E, \textbf{Wang Z}, Lin H. A novel class of small RNAs in mouse spermatogenic cells. \textbf{Genes \& Development}, 2006, 20(13):1709--1714.}
-\pub{\textbf{Wang Z}, Lin H. Nanos maintains germline stem cell self-renewal by preventing differentiation. \textbf{Science}, 2004, 303(5666):2016--2019.}
-
-\vspace{3pt}
-{\footnotesize\color{graytext}\itshape Additional peer-reviewed articles (selected from a record of 46): Kang D, Froula J, Egan R, Wang Z. MetaBAT (PeerJ, 2019); Lin H, Su Z, Meng X, et al, Wang Z (Int.\ J.\ Parallel Programming, 2018); Shi L, Wang Z, Yu W, Meng X (Parallel Computing, 2017); Kang DD, Rubin EM, Wang Z (it-Information Technology, 2016, invited); Wang Z, Willard HF (BMC Genomics, 2012); Fang Z, Martin JA, Wang Z (Cell \& Bioscience, 2012); Wang Z, Willard HF, Mukherjee S, Furey TS (PLoS Comp.\ Biol., 2006); Wang Z, Lin H (Current Biology, 2005); Szakmary A, Cox DN, Wang Z, Lin H (Current Biology, 2005); Parisi MJ, Deng W, Wang Z, Lin H (Genesis, 2001); and others. Full list on Google Scholar.}
-
 \subsection{Preprints \& Manuscripts in Review}
 \setcounter{pubcounter}{0}
-\pub{Wu W, Zhou Z, Riley R, et al, Shi L, Liu H, \textbf{Wang Z}. Uncovering the Genomic Manifold via Scalable Learning from the Global Microbiome (GenomeOcean). \textbf{bioRxiv}, 2025.01.30.635558. DOI:\,10.1101/2025.01.30.635558. \emph{(Nature Methods, revision in progress.)}}
+\pub{Wu W, Zhou Z, Riley R, Abdulqader M, Song X, Kautsar S, Egan R, Hofmeyr S, Liu G, Goldhaber-Gordon S, Yu M, Ho H, Liu Y, Stecca Steindorff A, Liu F, Chen F, Morgan-Kiss R, Shi L, Liu H, \textbf{Wang Z}. Uncovering the Genomic Manifold via Scalable Learning from the Global Microbiome (GenomeOcean). \textbf{bioRxiv}, 2025.01.30.635558. DOI:\,10.1101/2025.01.30.635558. \emph{(Nature Methods, major revision in progress.)}}
 \pub{\textbf{Wang Z}, Yang G, Liu F, Egan R. Positional Attention Signatures Distinguish AI-Generated from Natural Biological Sequences. \emph{(Submitted, NeurIPS 2026.)}}
 \pub{Yang G, Ghasemian A, Liu F, \textbf{Wang Z}, Mehrabi N, Kabra S, Hosseinmardi H. Asking Back: Interaction-Layer Antidistillation Watermarks. \emph{(Submitted, NeurIPS 2026.)}}
 \pub{Yang G, Liu F, Ghasemian A, \textbf{Wang Z}, Mehrabi N, Hosseinmardi H. Asymmetric Phase Coding Audio Watermarking. \emph{(Submitted, NeurIPS 2026.)}}
 \pub{Wu W, Song X, Wen Y, Lin Q, Zhou Z, Hu JYC, \textbf{Wang Z}, Liu H. Genome-Factory: An Integrated Library for Tuning, Deploying, and Interpreting Genomic Models. \textbf{arXiv}:2509.12266, 2025.}
+\pub{Tung A, Wang H, Li Y, \textbf{Wang Z}, Sun J. Spot-on: A Checkpointing Framework for Fault-Tolerant Long-running Workloads on Cloud Spot Instances. \textbf{arXiv}:2210.02589, 2022.}
+\pub{Lu Y, Shi L, Van Goethem MW, Sevim V, Mascagni M, Deng L, \textbf{Wang Z}. Hybrid Clustering of Long and Short-read for Improved Metagenome Assembly. \textbf{bioRxiv}, 2021.}
 \pub{Lettich R, Egan R, Riley R, \textbf{Wang Z}, Tritt A, Oliker L, Yelick K, Buluc A. GenomeFace: a deep-learning metagenome binner trained on 43,000 microbial genomes. \textbf{bioRxiv}, 2024.02.07.579326.}
+\pub{\textbf{Wang Z}, Ho H, Egan R, Yao S, Kang D, Froula J, Sevim V, Schulz F, Shay JE, Macklin D, McCue K. A new method for rapid genome classification, clustering, visualization, and novel taxa discovery from metagenome. \textbf{bioRxiv}, 2019.}
 
-% ============================ INVITED TALKS ==================================
-\section{Selected Invited Talks \& Seminars}
-\talk{2026.04}{\textbf{Invited Seminar}, Tulane University School of Medicine (Biochemistry \& Molecular Biology). \textit{Genome Foundation Models and the Genomic Manifold Hypothesis.} New Orleans, LA.}
-\talk{2025.11}{\textbf{Invited Speaker}, Joint Berkeley Initiative for Microbiome Sciences (JBIMS) Workshop \#2. \textit{Advanced Topics Using Foundation Genome Models: Inference, Evaluation, and Fine-tuning.} Berkeley, CA.}
-\talk{2025.10}{\textbf{Invited Speaker}, JBIMS Workshop \#1 (AI in Microbiome Science). \textit{GenomeOcean: An Efficient Genome Foundation Model.} Berkeley, CA.}
-\talk{2025.05}{\textbf{SFA\textsuperscript{2}F} (Sequence to Function). \textit{GenomeOcean: An Efficient Genome Foundation Model.} Santa Fe, NM.}
-\talk{2024.11}{LA CaTS Center, Biostatistics \& Epidemiology Seminar. \textit{GenomeOcean, A Pre-trained Metagenomic Foundational Model.} Virtual.}
-\talk{2024.02}{Northwestern University, Dept.\ of Statistics \& Data Science. \textit{From 20GB to 100TB: a journey on the metagenomic road.} Chicago, IL.}
-\talk{2023.07}{MICROBIOME --- ISMB/ECCB 2023. \textit{Axolotl: A Scalable Apache Spark Library for High-throughput Genomic Data Analysis.} Lyon, France.}
-\talk{2022.07}{ISMB 2022. \textit{Persistent Memory as an Alternative to RAM in Metagenome Assembly.} Madison, WI.}
-\par\vspace{2pt}{\footnotesize\color{graytext}\itshape 30+ additional invited talks (2004--2021) at venues including AGBT, CSHL Genome Informatics, Spark Summit, Stanford, UC~Berkeley, and international symposia in China and Germany.}
+\subsection{Peer-Reviewed Journal Articles \& Proceedings}
+\setcounter{pubcounter}{0}
+\pub{Zhou Z, Wu W, Ho H, Wang J, Shi L, Davuluri RV, \textbf{Wang Z}, Liu H. DNABERT-S: Learning species-aware DNA embedding with genome foundation models. \textbf{Bioinformatics}, 2025, 41(7). DOI:\,10.1093/bioinformatics/btaf188.}
+\pub{Wu W, Song X, Wen Y, Lin Q, Zhou Z, Huo J, \textbf{Wang Z}, Liu H. Genome-Factory: A Library for Tuning, Deploying, and Interpreting Genomic Foundation Models. \textbf{Proc.\ 43rd Int.\ Conf.\ on Machine Learning (ICML)}, 2026. \emph{(Accepted.)}}
+\pub{Ho H, Chovatia M, Egan R, He G, Yoshinaga Y, Liachko I, O'Malley R, \textbf{Wang Z}. Integrating chromatin conformation information in a self-supervised learning model improves metagenome binning. \textbf{PeerJ}, 2023, 11:e16129.}
+\pub{Sun J, Egan RE, Ho H, Li Y, \textbf{Wang Z}. Persistent Memory as an Effective Alternative to RAM in Metagenome Assembly. \textbf{BMC Bioinformatics}, 2022, 23(1):1--9.}
+\pub{Meyer F, Fritz A, Deng ZL, Koslicki D, et al. Critical Assessment of Metagenome Interpretation --- second round of challenges. \textbf{Nature Methods}, 2022, 19(4):429--440.}
+\pub{Li K, Lu Y, Deng L, Wang L, Shi L, \textbf{Wang Z}. Deconvolute individual genomes from metagenome sequences through short-read clustering. \textbf{PeerJ}, 2020, 8:e8966.}
+\pub{Shi L, \textbf{Wang Z}. Computational Strategies for Scalable Genomics Analysis. \textbf{Genes}, 2019, 10(12):1017.}
+\pub{Kang DD, Froula J, Egan R, \textbf{Wang Z}. MetaBAT, an efficient tool for accurately reconstructing single genomes from complex microbial communities. \textbf{PeerJ}, 2019, 7:e7359.}
+\pub{Lapierre N, Egan R, Wang W, \textbf{Wang Z}. MiniScrub: de novo long-read scrubbing using approximate alignment and deep learning. \textbf{BMC Bioinformatics}, 2019, 20(1):552.}
+\pub{Yin H, Guo HB, Weston DJ, Borland AM, Ranjan P, et al, \textbf{Wang Z}, et al. Diel rewiring and positive selection of ancient plant proteins enabled evolution of CAM photosynthesis in Agave. \textbf{BMC Genomics}, 2018.}
+\pub{Shi L, Meng X, Tseng E, Mascagni M, \textbf{Wang Z}. SpaRC: Scalable Sequence Clustering using Apache Spark. \textbf{Bioinformatics}, 2018. DOI:\,10.1093/bioinformatics/bty733.}
+\pub{Lin H, Su Z, Meng X, Jin X, \textbf{Wang Z}, Han W, An H, Chi M, Wu Z. Combining Hadoop with MPI to Solve Metagenomics Problems that are both Data- and Compute-intensive. \textbf{Int.\ Journal of Parallel Programming}, 2018, 46(4):762--775.}
+\pub{Sczyrba A, Hofmann P, Belmann P, et al. Critical Assessment of Metagenome Interpretation: a benchmark of metagenomics software. \textbf{Nature Methods}, 2017, 14(11):1063--1071.}
+\pub{Shi L, \textbf{Wang Z}, Yu W, Meng X. A case study of tuning MapReduce for efficient Bioinformatics in the cloud. \textbf{Parallel Computing}, 2017, 61:83--95.}
+\pub{Shams S, Kim N, Meng X, Ha MT, Jha S, \textbf{Wang Z}, Kim J. A Scalable Pipeline for Transcriptome Profiling Tasks with On-demand Computing Clouds. \textbf{Parallel and Distributed Processing Symposium Workshops, 2016 IEEE International}.}
+\pub{Kang DD, Rubin EM, \textbf{Wang Z}. Reconstructing single genomes from complex microbial communities. \textbf{it-Information Technology}, 2016, 58(3):133--139. (Invited.)}
+\pub{Shi L, \textbf{Wang Z}, Yu W, Meng X. Performance evaluation and tuning of BioPig for genomic analysis. \textbf{Proc.\ 2015 Int.\ Workshop on Data-Intensive Scalable Computing Systems}. doi:\,10.1145/2831244.2831252.}
+\pub{Gordon SP, Tseng E, Salamov A, Zhang J, Meng X, Zhao Z, Kang D, Underwood J, Grigoriev IV, Figueroa M, Schilling JS, Chen F, \textbf{Wang Z}. Widespread Polycistronic Transcripts in Fungi Revealed by Single-Molecule mRNA Sequencing. \textbf{PLoS ONE}, 2015, 10(7):e0132628.}
+\pub{Kang DD, Froula J, Egan R, \textbf{Wang Z}. MetaBAT, an efficient tool for accurately reconstructing single genomes from complex microbial communities. \textbf{PeerJ}, 2015, 3:e1165.}
+\pub{Shi W, Moon C, Leahy S, Kang D, Froula J, Kittelmann S, Fan C, Deutsch S, Gagic D, Seedorf H, Kelly W, Atua R, Sang C, Soni P, Li D, Pinares-Patino C, McEwan J, Janssen P, Chen F, Visel A, \textbf{Wang Z}, Attwood G, Rubin E. Methane yield phenotypes linked to differential gene expression in the sheep rumen microbiome. \textbf{Genome Research}, 2014, gr.168245.113.}
+\pub{Cheng EC, Kang D, \textbf{Wang Z}, Lin H. PIWI Proteins Are Dispensable for Mouse Somatic Development and Reprogramming of Fibroblasts into Pluripotent Stem Cells. \textbf{PLOS ONE}, 2014, e97821.}
+\pub{Martin JA, Johnson NV, Gross SM, Schnable J, Meng X, Wang M, Coleman-Derr D, Lindquist E, Wei CL, Kaeppler S, Chen F, \textbf{Wang Z}. A near-complete snapshot of the \textit{Zea mays} seedling transcriptome from ultra-deep sequencing. \textbf{Scientific Reports}, 2014. DOI:\,10.1038/srep04519.}
+\pub{Byrne RT, Klingele AJ, Cabot EL, Schackwitz WS, Martin JM, Martin J, \textbf{Wang Z}, Wood EA, Pennacchio C, Pennacchio LA, Perna NT, Battista JR, Cox MM. Evolution of Extreme Resistance to Ionizing Radiation via Genetic Adaptation of DNA Repair. \textbf{eLife}, 2014.}
+\pub{Samak T, Egan R, Bushnell B, Gunter D, Copeland A, \textbf{Wang Z}. Automatic Outlier Detection for Genome Assembly Quality Assessment. \textbf{eScience 2013}, IEEE 9th Int.\ Conference, 45--52.}
+\pub{Nordberg H, Bhatia K, Wang K, \textbf{Wang Z}. BioPig: a Hadoop-based analytic toolkit for large-scale sequence data. \textbf{Bioinformatics}, 2013. DOI:\,10.1093/bioinformatics/btt528.}
+\pub{Qian F, Chung L, Zheng W, Bruno V, Alexander RP, \textbf{Wang Z}, Wang X, Kurscheid S, Zhao H, Fikrig E, Gerstein M, Snyder M, Montgomery RR. Identification of Genes Critical for Resistance to Infection by West Nile Virus Using RNA-Seq Analysis. \textbf{Viruses}, 2013, 5(7):1664--1681.}
+\pub{Clark S, Egan R, Frazier PI, \textbf{Wang Z}. ALE: a Generic Assembly Likelihood Evaluation Framework for Assessing Genome and Metagenome Assembly Accuracy. \textbf{Bioinformatics}, 2013. DOI:\,10.1093/bioinformatics/bts723.}
+\pub{Samak T, Gunter D, \textbf{Wang Z}. Prediction of Protein Solubility in \textit{E.\ Coli}. \textbf{8th IEEE Int.\ Conf.\ on eScience}, Chicago IL, 2012.}
+\pub{\textbf{Wang Z}, Willard HF. Evidence for sequence biases associated with patterns of histone methylation. \textbf{BMC Genomics}, 2012, 13(1):367.}
+\pub{Fang Z, Martin JA, \textbf{Wang Z}. Statistical methods for identifying differentially expressed genes in RNA-Seq experiments. \textbf{Cell \& Bioscience}, 2012, 2(1):26.}
+\pub{Koren S, Schatz MC, Walenz BP, Martin J, Howard JT, Ganapathy G, \textbf{Wang Z}, Rasko DA, McCombie WR, Jarvis ED, Phillippy AM. Hybrid error correction and de novo assembly of single-molecule sequencing reads. \textbf{Nature Biotechnology}, 2012.}
+\pub{Martin J, \textbf{Wang Z}. Next-generation transcriptome assembly. \textbf{Nature Reviews Genetics}, 2011, 12(10):671--682.}
+\pub{Hess M, Sczyrba A, Egan R, Kim TW, Chokhawala H, Schroth G, Luo S, Clark DS, Chen F, Zhang T, Mackie RI, Pennacchio LA, Tringe SG, Visel A, Woyke T, \textbf{Wang Z}, Rubin EM. Metagenomic discovery of biomass-degrading genes and genomes from cow rumen. \textbf{Science}, 2011, 331(6016):463--467.}
+\pub{Ni T, Tu K, \textbf{Wang Z}, Song S, Wu H, Xie B, Scott KC, Grewal SI, Gao Y, Zhu J. The prevalence and regulation of antisense transcripts in \textit{Schizosaccharomyces pombe}. \textbf{PLoS ONE}, 2010, 5(12):e15271.}
+\pub{Bruno VM, \textbf{Wang Z}, Marjani SL, Euskirchen GM, Martin J, Sherlock G, Snyder M. Comprehensive annotation of the transcriptome of the human fungal pathogen \textit{Candida albicans} using RNA-seq. \textbf{Genome Research}, 2010, 20(10):1451--1458.}
+\pub{He S, Wurtzel O, Singh K, Froula JL, Yilmaz S, Tringe SG, \textbf{Wang Z}, Chen F, Lindquist EA, Sorek R, Hugenholtz P. Validation of two ribosomal RNA removal methods for microbial metatranscriptomics. \textbf{Nature Methods}, 2010, 7(10):807--812.}
+\pub{Raha D, \textbf{Wang Z}, Moqtaderi Z, Wu L, Zhong G, Gerstein M, Struhl K, Snyder M. Close association of RNA polymerase II and many transcription factors with Pol III genes. \textbf{PNAS}, 2010, 107(8):3639--3644.}
+\pub{Martin J, Bruno VM, Fang Z, Meng X, Blow M, Zhang T, Sherlock G, Snyder M, \textbf{Wang Z}. Rnnotator: an automated de novo transcriptome assembly pipeline from stranded RNA-Seq reads. \textbf{BMC Genomics}, 2010, 11:663.}
+\pub{\textbf{Wang Z}, Gerstein M, Snyder M. RNA-Seq: a revolutionary tool for transcriptomics. \textbf{Nature Reviews Genetics}, 2009, 10(1):57--63.}
+\pub{Nagalakshmi U, \textbf{Wang Z}$^{*}$, Waern K, Shou C, Raha D, Gerstein M, Snyder M. The transcriptional landscape of the yeast genome defined by RNA sequencing. \textbf{Science}, 2008, 320(5881):1344--1349.}
+\pub{\textbf{Wang Z}, Lin H. Sex-lethal is a target of Bruno-mediated translational repression in promoting the differentiation of stem cell progeny during \textit{Drosophila} oogenesis. \textbf{Developmental Biology}, 2007, 302(1):160--168.}
+\pub{\textbf{Wang Z}, Willard HF, Mukherjee S, Furey TS. Evidence of influence of genomic DNA sequence on human X chromosome inactivation. \textbf{PLoS Computational Biology}, 2006, 2(9):e113.}
+\pub{Grivna ST, Beyret E, \textbf{Wang Z}, Lin H. A novel class of small RNAs in mouse spermatogenic cells. \textbf{Genes \& Development}, 2006, 20(13):1709--1714.}
+\pub{\textbf{Wang Z}, Lin H. The division of \textit{Drosophila} germline stem cells and their precursors requires a specific cyclin. \textbf{Current Biology}, 2005, 15(4):328--333.}
+\pub{Szakmary A, Cox DN, \textbf{Wang Z}, Lin H. Regulatory relationship among piwi, pumilio, and bag-of-marbles in \textit{Drosophila} germline stem cell self-renewal and differentiation. \textbf{Current Biology}, 2005, 15(2):171--178.}
+\pub{\textbf{Wang Z}, Lin H. Nanos maintains germline stem cell self-renewal by preventing differentiation. \textbf{Science}, 2004, 303(5666):2016--2019.}
+\pub{Parisi MJ, Deng W, \textbf{Wang Z}, Lin H. The arrest gene is required for germline cyst formation during \textit{Drosophila} oogenesis. \textbf{Genesis}, 2001, 29(4):196--209.}
 
-% ============================ FUNDING ========================================
+\section{Invited Seminars \& Talks}
+\talk{2026.04}{\textbf{Invited Seminar}, Tulane University School of Medicine, Dept.\ of Biochemistry \& Molecular Biology. \textit{Genome Foundation Models and the Genomic Manifold Hypothesis.} New Orleans, LA.}
+\talk{2025.11}{\textbf{Invited Speaker}, Joint Berkeley Initiative for Microbiome Sciences (JBIMS) Workshop \#2 (Advanced Applications and the Future of AI in Microbiome Science). \textit{Advanced Topics Using Foundation Genome Models: Inference, Evaluation, and Fine-tuning.} Berkeley, CA.}
+\talk{2025.10}{\textbf{Invited Speaker}, Joint Berkeley Initiative for Microbiome Sciences (JBIMS) Workshop \#1 (AI in Microbiome Science). \textit{GenomeOcean: An Efficient Genome Foundation Model Trained on Large-Scale Metagenomic Assemblies.} Berkeley, CA.}
+\talk{2025.05}{Sequence to Function: Applications and Analysis for the Future (SFA$^2$F). \textit{GenomeOcean: An Efficient Genome Foundation Model Trained on Large-Scale Metagenomic Assemblies.} Santa Fe, NM.}
+\talk{2024.11}{\textbf{Invited talk}, The Louisiana Clinical and Translational Science (LA CaTS) Center, Biostatistics \& Epidemiology Seminar Series. \textit{GenomeOcean, A Pre-trained Metagenomic Foundational Model.} Virtual.}
+\talk{2024.02}{\textbf{Invited talk}, Northwestern University, Dept.\ of Statistics and Data Science Seminar Series. \textit{From 20GB to 100TB: a journey on the metagenomic road.} Chicago, IL.}
+\talk{2023.11}{\textbf{Invited talk}, University of Hawaii. \textit{From 20GB to 100TB: a journey on the metagenomic road.} Virtual.}
+\talk{2023.07}{Axolotl: A Scalable Apache Spark-based Library for High-throughput Genomic Data Analysis. MICROBIOME --- ISMB/ECCB 2023. Lyon, France.}
+\talk{2022.07}{Persistent Memory as an Effective Alternative to RAM in Metagenome Assembly. ISMB 2022. Madison, WI.}
+\talk{2020.08}{Metagenome Exploration: discover novel microbial species. Stanford Summer Series of Guest Lecture. Online.}
+\talk{2020.02}{Genome Constellation: a software suite to rapidly analyze metagenome-assembled genomes and discover new species. JGI/UCM mini-workshop. Merced, CA.}
+\talk{2019.09}{Metagenome Exploration: discover novel microbial species. Midwest Computational Biology Workshop. Chicago, IL.}
+\talk{2019.05}{Big data genomics: Clustering billions of sequencing reads. Dataworks Summit. Washington, DC.}
+\talk{2018.02}{SpaRC: scalable read clustering using Apache Spark. HPC Advisory Conference at Stanford University. Palo Alto, CA.}
+\talk{2017.08}{Searching for new life in Antarctica. Southern University of Science and Technology; Institute of Genome Sciences, Chinese Academy of Agriculture. Shenzhen, China.}
+\talk{2017.04}{Mining Metagenomes for New Branches on the Tree of Life. CAS theme event seminar, Oakland University. Rochester, MI.}
+\talk{2017.02}{Exploring Spark for scalable metagenomics analysis. Spark Summit East. Boston, MA.}
+\talk{2016.05}{Searching for new outliers of life. UC Merced QSB 3rd Annual Spring Retreat. Merced, CA.}
+\talk{2016.03}{Challenges and opportunities of environmental metagenomics. UC Berkeley Statistics and Genomics Seminar. Berkeley, CA.}
+\talk{2016.03}{Optimizing AWS Hadoop for Bioinformatics: a Case Study. Bioinformatics for Big Data on Molecular Medicine Triconference. San Francisco, CA.}
+\talk{2015.09}{Optimizing AWS Hadoop for Bioinformatics: a Case Study. LabTech 2015. Berkeley, CA.}
+\talk{2015.05}{Critical Assessment of Metagenomic Interpretation 2015: Metagenome assembly, binning and quality evaluation. Berlin, Germany.}
+\talk{2015.05}{Transcriptomics: the chase for precision. University of Auburn. Auburn, AL.}
+\talk{2015.01}{Molecular Medicine Tri-Con 2015: Hardware and software infrastructure to mine big metagenomic datasets. San Francisco, CA.}
+\talk{2014.12}{From microbial communities to functional cellulases. Vland Inc. Qingdao, China.}
+\talk{2014.12}{Genomics, Computing and our Future: How metagenomics and big data will save our world. University of Science and Technology of China. Hefei, China.}
+\talk{2014.11}{Statistics in Metagenomics. Louisiana State University Medical Center. New Orleans, LA.}
+\talk{2014.05}{Deep metagenome informatics: from genes to genomes. 2nd Annual LA Conference on Bioinformatics Symposium. Baton Rouge, LA.}
+\talk{2014.03}{Next-generation transcriptome assembly, in distinction mode? Hunter College. New York, NY.}
+\talk{2013.06}{Deep metagenomics mining for energy and environmental problems. Sun Yat-Sen University. Guangzhou, China.}
+\talk{2013.04}{Next-generation transcriptome assembly: from Yeast to Maize. USDA-ARS. Albany, CA.}
+\talk{2013.03}{Robust RNA-Seq Statistics. CHI X-Gen Congress 2013. San Diego, CA.}
+\talk{2012.09}{Next-generation transcriptome/metagenome assembly. UC Davis Bioinformatics Short Course. Davis, CA.}
+\talk{2012.07}{Deep metagenome data mining for bioenergy and climate changes. IUBS-31. Suzhou, China.}
+\talk{2012.06}{Computational approaches in deep metagenome data analysis. Computer Science Dept., University of Hong Kong. Hong Kong, China.}
+\talk{2012.05}{Mining metagenomic data for new enzymes. Lawrence Berkeley Lab Carbon Cycle 2.0 Seminar. Berkeley, CA.}
+\talk{2012.05}{From microbial communities to functional cellulases: a deep metagenomic approach. Frontier Metagenomics Symposium, University of Missouri. Columbia, MO.}
+\talk{2011.11}{Validate de novo transcriptome assembly using PacBio long reads. PacBio UC Davis workshop. Davis, CA.}
+\talk{2011.10}{Next-generation assembly: Technology \& Informatics. NCASM Fall Meeting, Santa Clara University. CA.}
+\talk{2011.07}{From microbial communities to functional cellulases: a deep metagenomic approach. SCBA International Symposium 2011. Guangzhou, China.}
+\talk{2011.07}{RNA-Seq: applying the technology to the wild. University of Colorado at Boulder. Boulder, CO.}
+\talk{2011.05}{RNA-Seq: technology and applications. Merck Inc. Newark, NJ.}
+\talk{2011.04}{From microbial communities to functional cellulases. Lawrence Livermore National Lab. Livermore, CA.}
+\talk{2011.03}{Massive Discovery of Biomass Degrading Genes and Genomes in Rumen. DOE JGI User Meeting. Walnut Creek, CA.}
+\talk{2011.02}{Massive Metagenomic Discovery of Biomass-Degrading Genes and Genome from Cow Rumen. AGBT 2011. Marco Island, FL.}
+\talk{2010.06}{Assembly of biomass-degrading genes and genomes from cow rumen. 2010 Illumina San Francisco User Meeting. San Francisco, CA.}
+\talk{2009.11}{Assembly Cellulolytic Genes from Deep Metagenomic Sequencing of a Cow Rumen Microbiome. CSHL Genome Informatics Meeting. New York, NY.}
+\talk{2008.11}{RNA-Seq for Cancer Transcriptome. ``Crack the Code with the Bear'' Research Symposium, Northwestern University. Chicago, IL.}
+\talk{2004.06}{Nanos Maintains Stem Cells By Preventing Differentiation. Dept.\ of Biology Seminar Series, Duke University. Durham, NC.}
+
 \section{Research Support}
-\dated{2009--present}{\textbf{co-PI} --- DOE BER Field Work Proposal to DOE JGI (DE-AC02-05CH112), $\sim$\$1M/yr.}
-\dated{2025--2026}{\textbf{Co-PI} --- DOE Genesis Mission Proposal (OS4LS; Northwestern lead), $\sim$\$150k. \emph{(Submitted Apr 2026.)}}
+\dated{2009--present}{\textbf{co-PI} --- DOE Office of Biological \& Environmental Research (BER) contracted Field Work Proposal to DOE Joint Genome Institute (DE-AC02-05CH112), $\sim$\$1M/yr.}
+\dated{2025--2026}{\textbf{Co-PI} --- DOE Genesis Mission Proposal (OS4LS; Northwestern University lead), $\sim$\$150k. \emph{(Submitted Apr 2026.)}}
 \dated{2025--2026}{\textbf{Co-PI} --- Strategic Partnership Project (SPP), UC~Merced, $\sim$\$30k. \emph{(Ongoing.)}}
-\dated{2024--2025}{\textbf{PI} --- NERSC DDR ``GenAI for Science'': Biosynthetic Gene Cluster Foundation Model (bgcFM), 30k GPU node-hours.}
-\dated{2024}{\textbf{PI} --- NERSC ERCAP/DDR: Impact of Tokenization Strategy on Genome Large Models, 10k GPU node-hours.}
-\dated{2021}{\textbf{PI} --- Google Inc., Spark-based metagenome clustering pilot on GCP, \$20k.}
-\dated{2017--2018}{\textbf{PI} --- NSF XSEDE Startup (MCB170069), Pittsburgh Supercomputing Center, $\sim$\$15k.}
-\dated{2015--2016}{\textbf{PI} --- Amazon Web Services Education Research Grant, \$20k.}
-\dated{2009--2011}{\textbf{PI} --- DOE BER Field Work Proposal: Cow Rumen Metagenome Informatics, \$1M.}
-\dated{2011--2013}{\textbf{PI} --- LBNL LDRD: Machine learning + HPC to discover novel enzymes, \$334k.}
-\dated{2010--2012}{\textbf{co-PI} --- LBNL LDRD: Transcriptome Analysis of Agave, a candidate biofuel feedstock.}
+\dated{2024--2025}{\textbf{PI} --- NERSC DDR ``GenAI for Science'': A Biosynthetic Gene Cluster Foundation Model (bgcFM) for Systematically Exploring the Secondary Metabolic Capacity Encoded by Diverse Microbes. 30k GPU node-hours.}
+\dated{2024}{\textbf{PI} --- NERSC DDR Campaign / 2024 NERSC ERCAP: Evaluation of the Impact of Tokenization Strategy on the Performance of Genome Large Models. 10k GPU node-hours.}
+\dated{2021}{\textbf{PI} --- Google Inc., Apache Spark-based metagenome clustering pilot on Google Cloud Platform. \$20k.}
+\dated{2017--2018}{\textbf{PI} --- NSF XSEDE Startup Grant, Pittsburgh Supercomputing Center. Data-driven metagenome assembly optimization and scalable metagenome read clustering (MCB170069). $\sim$\$15k.}
+\dated{2015--2016}{\textbf{PI} --- Amazon Web Services Education Research Grant. \$20,000.}
+\dated{2011--2013}{\textbf{PI} --- Berkeley Laboratory Directed Research and Development Program (LDRD): Combining machine learning and high-performance computing to discover novel enzymes. \$334k.}
+\dated{2010--2012}{\textbf{co-PI} --- Berkeley Laboratory Directed Research and Development Program (LDRD): Transcriptome Analysis of Agave, a candidate biofuel feedstock for semi-arid climates.}
+\dated{2009--2011}{\textbf{PI} --- DOE Office of Biological \& Environmental Research (BER) contracted Field Work Proposal: Cow Rumen Metagenome Informatics. \$1M.}
 
-% ============================ SERVICE ========================================
-\section{Professional Service \& Knowledge Transfer}
+\section{Professional Service}
 \begin{cvlist}
-  \item \textbf{Abstract Chair}, ISMB 2026 Microbiome COSI (Washington, D.C.) --- led abstract selection, reviewer coordination, and program scheduling.
-  \item \textbf{Program Committee}, ISMB/ECCB 2018--2026.
-  \item \textbf{Peer Reviewer}, NeurIPS 2026 (computational biology) and ACS Synthetic Biology (2026).
-  \item \textbf{Graduate Admissions Committee}, UC~Merced (2019, 2026).
-  \item Ad-hoc grant review panels for \textbf{NIDDK} and \textbf{NSF}.
-  \item \textbf{Software \& Technology Transfer:} Genome-Factory (ICML 2026; 130+ GitHub stars); genomeocean-sentinel v1.0 (LBNL software disclosure \#2026-126, under review for open-source release).
+  \item \textbf{Abstract Chair}, ISMB 2026 Microbiome COSI, Washington, D.C. --- led abstract selection, reviewer coordination, and program scheduling.
+  \item \textbf{Program Committee Member}, ISMB/ECCB 2026, 2025, 2024, 2023, 2022, 2021, 2019, 2018.
+  \item \textbf{Peer Reviewer}, NeurIPS 2026 (computational biology track) and ACS Synthetic Biology (2026).
+  \item \textbf{Graduate Admission Committee Member}, UC~Merced (2026, 2019).
+  \item \textbf{Ad-hoc grant review} committee member for NIDDK and NSF.
 \end{cvlist}
 
 \subsection{Editorial Responsibilities}
 \begin{cvlist}
-  \item Editor, \textit{Nature Scientific Reports} (2012--2024).
   \item Editor, Special Issue ``Impact of Parallel and High-performance Computing in Genomics,'' \textit{Genes} (2019).
-  \item Guest Editor, \textit{BMC Cell \& Biosciences} (2012).
+  \item Editor, \textit{Nature Scientific Reports} (2012--2024).
+  \item Guest Editor, \textit{BMC Cell \& BioSciences} (2012).
 \end{cvlist}
 
-% ============================ MENTORSHIP =====================================
+\section{Knowledge \& Technology Transfer}
+\begin{cvlist}
+  \item \textbf{Genome-Factory} (software, open-source): Python library unifying genomic foundation model workflows (data preprocessing, model loading, benchmarking). Accepted to ICML 2026; 130+ GitHub stars. Actively maintained and adopted across the research community.
+  \item \textbf{genomeocean-sentinel (GOS) v1.0}: AI-detection framework for synthetic DNA signatures. LBNL software disclosure \#2026-126 submitted June 2026; under review for open-source release.
+  \item \textbf{MemVerge} (industry advisory, 2022--2025): Senior Advisor for cloud automation platform, supporting technology transfer of HPC and persistent memory innovations.
+  \item \textbf{Google Cloud Innovator} (2023--2026): Promoted cloud-based genomics workflows as part of Google Developer Expert program.
+\end{cvlist}
+
 \section{Mentorship \& Training}
-\textbf{Group composition (FY26):} 1 postdoc, 1 research associate/technician, 3 affiliates/guests.
-\vspace{4pt}
 
 \subsection{Postdoctoral Scholars}
 \begin{cvlist}
-  \item \textbf{Dongwan (Don) Kang} (2012--2013) --- VP for AI, Samsung.
-  \item \textbf{Weibing Shi} (2011--2013) --- Scientific Director, Computational Biology, Amgen.
-  \item \textbf{Alex Sczyrba} (2009--2011) --- Director, Computational Metagenomics, University of Bielefeld / Forschungszentrum J\"ulich, Germany.
-  \item \textbf{Changbin Du} (2009--2011) --- Biostatistician, Truvian.
+  \item \href{https://www.linkedin.com/in/don-kang-8246901a/}{\textbf{Dongwan (Don) Kang}} (2012--2013), Ph.D.\ from Univ.\ of Pittsburgh. Currently VP for AI at Samsung.
+  \item \href{https://www.linkedin.com/in/weibing-shi-38218452/}{\textbf{Weibing Shi}} (2011--2013), Ph.D.\ from Zhejiang Univ., China. Currently Scientific Director of Computational Biology at Amgen.
+  \item \href{https://www.linkedin.com/in/asczyrba/}{\textbf{Alex Sczyrba}} (2009--2011), Ph.D.\ from Bielefeld Univ. Currently Director, Forschungszentrum J\"ulich IBG-5 Computational Metagenomics, University of Bielefeld, Germany.
+  \item \href{https://www.linkedin.com/in/changbin-du-b78b0418/}{\textbf{Changbin Du}} (2009--2011), Ph.D.\ from Univ.\ of Iowa. Currently Biostatistician at Truvian.
 \end{cvlist}
 
-\subsection{Graduate Students \& Thesis Committees}
+\subsection{Graduate Students (Thesis)}
 \begin{cvlist}
-  \item \textbf{Zhihan Zhou} (thesis committee, Northwestern, 2024--2025; \emph{Ph.D.\ defended FY26}) --- Research Scientist, NVIDIA.
-  \item \textbf{Harrison Ho} (thesis advisor, UC~Merced, 2019--2024) --- Postdoc, Albert Einstein College.
-  \item \textbf{Lizhen Shi} (external thesis advisor, Florida State, 2017--2020) --- Assistant Professor, Northwestern.
-  \item \textbf{Chantz Williams} (thesis committee, UC~Merced, 2024--present, ongoing).
-  \item Thesis committees: Travis Lawrence, Steve Wilson, Thaddeus Seher, Josephine Sami (UC~Merced, 2014--2022).
+  \item \textbf{Zhihan Zhou} (thesis committee, Northwestern University, 2024--2025; \emph{Ph.D.\ defended FY26}). Currently Research Scientist at NVIDIA.
+  \item \textbf{Harrison Ho} (thesis advisor, University of California at Merced, 2019--2024). Currently Postdoc Researcher at Albert Einstein College of Medicine.
+  \item \textbf{Lizhen Shi} (external thesis advisor, Florida State University, 2017--2020). Currently Assistant Professor at Northwestern University.
+  \item \textbf{Chantz Williams} (thesis committee, University of California at Merced, 2024--present).
+  \item \textbf{Josephine Sami} (thesis committee, University of California at Merced, 2018--2022).
+  \item \textbf{Thaddeus Seher} (thesis committee, University of California at Merced, 2017--2021).
+  \item \textbf{Steve Wilson} (thesis committee, University of California at Merced, 2014--2019). Currently Computational Biology and Genomics Postdoctoral Researcher at Lawrence Livermore National Laboratory.
+  \item \textbf{Travis Lawrence} (thesis committee, University of California at Merced, 2014--2018). Currently Senior Manager, Machine Learning at Pilot Flying J.
 \end{cvlist}
 
-\subsection{Undergraduate \& Internship Pipeline}
+\subsection{Other Trainees (Staff \& Research Associates)}
 \begin{cvlist}
-  \item \textbf{FY26 cohort:} Oliver Benelli (UC~Berkeley CalTeach), Sally Liao (Northwestern SULI), Brandon Barana (UC~Merced).
-  \item Founder \& Director, \textbf{JGI/UC~Merced Distinguished Summer Internship Program}; co-lead, \textbf{DOE RENEW} pipeline for underrepresented students in science.
-  \item 40+ mentored interns since 2010 across the DOE Computational Biology Graduate Fellowship, LBNL SULI, CalTeach, and JGI-UCM programs.
+  \item \href{https://www.linkedin.com/in/jeff-martin-99a91016/}{\textbf{Jeffrey A.\ Martin}} (2009--2012), M.S.\ from Georgia Tech. Currently VP of Engineering at Previ.
+  \item \href{https://www.linkedin.com/in/karanb/}{\textbf{Karan Bhat}} (2009--2010), Ph.D.\ from UC San Diego. Currently Senior Director of Engineering at Dexcom.
+  \item \href{https://www.linkedin.com/in/kai-wang-19000033/}{\textbf{Kai Wang}} (2012--2015), Ph.D.\ from Kentucky University. Currently Director for High Performance Computing at Complete Genomics.
+  \item \href{https://www.linkedin.com/in/nicolejohnsonphd/}{\textbf{Nicole Johnson}} (2013--2016). Currently Senior Technical Program Manager, Microsoft.
+  \item \href{https://www.linkedin.com/in/huanyu-wang-8a1097b0/}{\textbf{Huanyu Wang}} (2016), M.S.\ from Northwestern Univ. Currently CPU Implementation Engineer at Apple.
+  \item \href{https://www.linkedin.com/in/xian-dong-meng-59600013/}{\textbf{Xiandong Meng}} (2011--2017), Ph.D.\ from Wayne State Univ. Currently Senior Software Developer at Stanford University.
+  \item \href{https://www.linkedin.com/in/michael-barton-70bb7716/}{\textbf{Michael Barton}} (2017--2018), Ph.D.\ from Univ.\ of Manchester. Currently Staff Bioinformatics Engineer at Karius.
+  \item \href{https://www.linkedin.com/in/volkansevim/}{\textbf{Volkan Sevim}} (2017--2021), Ph.D.\ from Florida State University. Currently Bioinformatics Lead at GSK.
+  \item \href{https://www.linkedin.com/in/satriaphd/}{\textbf{Satria Kautsar}} (2012--present), Ph.D.\ from Wageningen University (NL). Currently Data Scientist at JGI.
+\end{cvlist}
+
+\subsection{Graduate Student Interns}
+\subsubsection*{\small DOE Computational Biology Graduate Fellowship}
+\begin{cvlist}
+  \item Scott Clark (Cornell University, 2010)
+  \item Irene Kaplow (Stanford University, 2011)
+  \item Aleah F.\ Caulin (University of Pennsylvania, 2012)
+  \item Derek MacKlin (Stanford University, 2014)
+  \item Sarah Middleton (University of Pennsylvania, 2014)
+  \item Jordan Hoffmann (Harvard University, 2016)
+  \item Kayla Macue (MIT, 2018)
+  \item Kaishu Mason (University of Pennsylvania, 2022)
+\end{cvlist}
+
+\subsubsection*{\small Other Graduate Interns}
+\begin{cvlist}
+  \item Rachel Orsini (MLEF, Stanford, 2018)
+  \item Lizhen Shi (Summer Intern, Auburn University, 2015)
+  \item Siqi Bian (Summer Intern, UC Davis, 2016)
+  \item Feng Li (Exchange student, Chinese University of Science and Technology, 2016--2017)
+  \item Tavis Lawrence (JGI-UCM Summer Internship, UC Merced, 2014)
+  \item Cristhian Gutierrez (JGI-UCM Summer Internship, UC Merced, 2015)
+  \item Jackie Shay (JGI-UCM Summer Internship, UC Merced, 2017)
+  \item Jonathan Azules (JGI-UCM Summer Internship, UC Merced, 2017)
+  \item Nathan LaPierre (Summer Intern, UCLA, 2017)
+  \item Kexue Li (Visiting student, Shanghai Univ., 2019)
+  \item Feng Yu (JGI-UCM Summer Internship, UC Merced, 2022)
+  \item Chhandak Basu (DOE Visiting Faculty Program, Cal State Northridge, 2023)
+  \item Avertis Mishegyan (DOE Visiting Faculty Program, Cal State Northridge, 2023)
+  \item Chris Bivins (JGI-UCM Summer Internship, UC Merced, 2023)
+  \item Cory-James Pugne-Andenoro (JGI-UCM Summer Internship, UC Merced, 2024)
+\end{cvlist}
+
+\subsection{Undergraduate Students}
+\begin{cvlist}
+  \item Oliver Benelli (CalTeach Program, UC Berkeley, 2025)
+  \item Sally Liao (LBNL Science Undergraduate Laboratory Internship, Northwestern, 2025)
+  \item Brandon Barana (JGI-UCM Summer Internship, UC Merced, 2025)
+  \item Shira Goldhaber-Gordon (LBNL SULI, Johns Hopkins, 2024)
+  \item Srinidhi Karuppusami (CalTeach Program, UC Berkeley, 2024)
+  \item Yuguo Tang (LBNL SULI, UC Berkeley, 2023)
+  \item Victor Cruz Ramos (CalTeach Program, UC Berkeley, 2023)
+  \item Doreen Wang (CalTeach Program, UC Berkeley, 2023)
+  \item Sivagunalan Thamilarasan (JGI-UCM Summer Internship, UC Merced, 2022)
+  \item Sean Saki (JGI-UCM Summer Internship, UC Merced, 2021, 2022)
+  \item Sandra Chacon (JGI-UCM Summer Internship, UC Merced, 2021)
+  \item Sidharth Babu (JGI-UCM Summer Internship, UC Merced, 2020)
+  \item Ricky Yan (JGI-UCM Summer Internship, UC Merced, 2019)
+  \item Cristhian Gutierrez Huerta (JGI-UCM Summer Internship, UC Merced, 2015)
+  \item Sean Bray (JGI Summer Internship, Hartford University, 2015)
+  \item Xiuwen Cao (LBNL SULI, UC Berkeley, 2015)
+  \item Roxanne Fries (LBNL SULI, Claremont, 2014)
+  \item Shayna Stein (LBNL SULI, UCLA, 2013)
+  \item Katrina Kalantar (LBNL SULI, UCSD, 2012)
 \end{cvlist}
 
 \end{document}
